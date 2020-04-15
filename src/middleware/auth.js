@@ -12,14 +12,6 @@ const auth = async (req, res, next) => {
         const token = authToken.replace('Bearer ', '');
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-        const currentDate = new Date();
-        const expirationDate = new Date(decoded.expires);
-
-        // checking if token expired
-        if (expirationDate < currentDate) {
-            throw new Error('Token expired, please login');
-        }
-
         const user = await User.findOne({
             _id: decoded._id
         });

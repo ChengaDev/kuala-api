@@ -81,10 +81,20 @@ userSchema.methods.generateAuthToken = async function () {
     );
     const token = jwt.sign(
         { _id: user._id.toString(), expires: currentDatePlusOneMonth },
-        process.env.JWT_SECRET
+        process.env.JWT_SECRET,
+        { expiresIn: 10800 }
     );
 
     return token;
+};
+
+userSchema.methods.toJSON = function () {
+    const user = this;
+    const userObject = user.toObject();
+
+    delete userObject.password;
+
+    return userObject;
 };
 
 const User = mongoose.model('User', userSchema);
