@@ -1,25 +1,24 @@
 {
-  "name": "kuala-api",
-  "version": "1.0.0",
-  "description": "api to server kuala data",
-  "main": "index.js",
-  "dependencies": {
-    "bcrypt": "^4.0.1",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.7",
-    "validator": "^13.0.0"
-  },
-  "devDependencies": {
-    "env-cmd": "^10.1.0",
-    "nodemon": "^2.0.3"
-  },
-  "scripts": {
-    "start": "node src/index.js",
-    "dev": "env-cmd --verbose -f ./config/dev.env nodemon src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Chen Gazit",
-  "license": "ISC"
+    "name": "kuala-api",
+    "version": "1.0.0",
+    "description": "api to server kuala data",
+    "main": "index.js",
+    "dependencies": {
+        "bcrypt": "^4.0.1",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^5.9.7",
+        "validator": "^13.0.0"
+    },
+    "devDependencies": {
+        "env-cmd": "^10.1.0",
+        "nodemon": "^2.0.3"
+    },
+    "scripts": {
+        "start": "node src/index.js",
+        "dev": "env-cmd --verbose -f ./config/dev.env nodemon src/index.js"
+    },
+    "author": "Chen Gazit",
+    "license": "ISC"
 }
