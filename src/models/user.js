@@ -49,6 +49,24 @@ const userSchema = new mongoose.Schema(
     }
 );
 
+userSchema.virtual('projects', {
+    ref: 'Project',
+    localField: '_id',
+    foreignField: 'owner'
+});
+
+userSchema.virtual('experiences', {
+    ref: 'Experience',
+    localField: '_id',
+    foreignField: 'owner'
+});
+
+userSchema.virtual('educations', {
+    ref: 'Education',
+    localField: '_id',
+    foreignField: 'owner'
+});
+
 // Hash the plain text password before saving
 userSchema.pre('save', async function (next) {
     const user = this;

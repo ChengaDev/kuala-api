@@ -1,16 +1,16 @@
 const mongoose = require('mongoose');
 
-const experienceSchema = new mongoose.Schema(
+const projectSchema = new mongoose.Schema(
     {
-        organiztion: {
+        name: {
             type: mongoose.Schema.Types.String,
             required: true
         },
-        positionTitle: {
+        organization: {
             type: mongoose.Schema.Types.String,
             required: true
         },
-        positionDescription: {
+        description: {
             type: mongoose.Schema.Types.String,
             required: true
         },
@@ -31,6 +31,6 @@ const experienceSchema = new mongoose.Schema(
     }
 );
 
-const Experience = mongoose.model('Experience', experienceSchema);
+const Project = mongoose.model('Project', projectSchema);
 
-module.exports = Experience;
+module.exports = Project;
